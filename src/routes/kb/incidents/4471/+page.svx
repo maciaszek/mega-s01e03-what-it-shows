@@ -4,14 +4,14 @@ title: '#4471 · dates parse mm/dd in eu locales'
 owner: support desk
 status: closed
 reviewed: 2026-10-28
-signature: 'Maciej Drążek'
+signature: 'v1.eyJzdWIiOiI1MjY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMxOTkxMjMsImV4cCI6MTc5MzI4NTUyM30.mjkaux5b7i7NwIBDPCWdBo4GRtbdRnAu3tkk9cGwiiE'
 ---
 
 <script>
   import IncidentCauseTable from '#lib/kb/IncidentCauseTable.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 
-  const signature = 'Maciej Drążek';
+  const signature = 'v1.eyJzdWIiOiI1MjY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMxOTkxMjMsImV4cCI6MTc5MzI4NTUyM30.mjkaux5b7i7NwIBDPCWdBo4GRtbdRnAu3tkk9cGwiiE';
   const issueUrls = {
     parser: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/1',
     hint: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/2',
