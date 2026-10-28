@@ -31,6 +31,10 @@ The export for #4471 merges reports from two distinct date-parsing causes. This 
 
 The table deduplicates overlapping export rows by report ID, then counts each report once under its tenant-specific cause. Five reports also carry a one-day-move note; that symptom does not define another cause by itself.
 
+## Engineering update
+
+The support desk's 5 October update says #4471 is closed. The parser cause is **fixed** by `fix(dates): parse dd/mm for eu locales`, so its ticket is closed as completed. The booking-v3 hint cause is **won't fix** because that form was retired, so its ticket is closed as not planned.
+
 ## Triage
 
 Use the tenant's locale and booking form to decide which issue to file. Keep the parser and hint causes in separate tickets, even when the report subjects match. The linked issues include the number of reports covered.
