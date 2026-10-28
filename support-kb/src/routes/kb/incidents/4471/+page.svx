@@ -1,0 +1,38 @@
+---
+layout: runbook
+title: '#4471 · dates parse mm/dd in eu locales'
+owner: support desk
+status: closed
+reviewed: 2026-10-28
+signature: MEGA.dev harness · S01E03
+---
+
+<script>
+  import IncidentCauseTable from '#lib/kb/IncidentCauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const signature = 'MEGA.dev harness · S01E03';
+  const issueUrls = {
+    parser: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/1',
+    hint: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/2',
+  };
+</script>
+
+Since April, people have told us their bookings land on the wrong day: a month flipped. The export records 412 distinct reports merged into #4471. Its rows show two different causes.
+
+## Cause breakdown
+
+<IncidentCauseTable ticket={4471} {issueUrls} />
+
+The table deduplicates overlapping export rows by report ID, then counts each report once under its tenant-specific cause. Intake tags are clues, not the source of truth. The one-day-move reports are a symptom, not a separate cause.
+
+## Why these are separate
+
+- **Parser:** the shared parser reads month first. For tenants that write dates day first, this swaps month and day. [Ticket #1](https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/1) covers these reports.
+- **Hint:** booking-v3 displays a month-first hint, while the day-first tenant locale controls how the submitted date is read. Customers following the hint can still get a swapped date. [Ticket #2](https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/2) covers these reports.
+
+## Engineering update
+
+The support desk's 5 October update says #4471 is closed. The parser cause is **fixed** by `fix(dates): parse dd/mm for eu locales`, so its ticket is closed as completed. The booking-v3 hint cause is **won't fix** because that form was retired, so its ticket is closed as not planned.
+
+<RenderStamp {signature} />

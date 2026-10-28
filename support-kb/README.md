@@ -37,5 +37,5 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
 ## S01E03 addition
 
-- `src/routes/kb/incidents/4471-date-causes/+page.svx` separates the two causes in #4471.
-- `rendered/4471-date-causes.html` is the static rendered preview of that page.
+- `src/routes/kb/incidents/4471/+page.svx` separates the two causes in #4471.
+- `rendered/kb/incidents/4471/index.html` is the rendered preview of that page.
