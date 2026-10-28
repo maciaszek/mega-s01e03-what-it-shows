@@ -1,0 +1,38 @@
+---
+layout: runbook
+title: '#4471 · two date-parsing causes'
+owner: support desk
+status: known
+reviewed: 2026-10-28
+signature: MEGA.dev harness · S01E03
+---
+
+<script>
+  import IncidentCauseTable from '#lib/kb/IncidentCauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const signature = 'MEGA.dev harness · S01E03';
+  const issueUrls = {
+    parser: 'https://github.com/OWNER/REPO/issues/ISSUE_NUMBER',
+    hint: 'https://github.com/OWNER/REPO/issues/ISSUE_NUMBER',
+  };
+</script>
+
+The export for #4471 merges reports from two distinct date-parsing causes. This page separates them using the tenant locale, booking form, and intake channel. The intake tag is a useful clue, but it is not the source of truth.
+
+## Cause breakdown
+
+<IncidentCauseTable ticket={4471} {issueUrls} />
+
+## Why these are separate
+
+- **Parser:** the shared parser reads month first. For tenants that write dates day first, this swaps month and day.
+- **Hint:** booking-v3 displays a month-first hint, while the day-first tenant locale controls how the submitted date is read. Customers following the hint can still get a swapped date.
+
+The table deduplicates overlapping export rows by report ID, then counts each report once under its tenant-specific cause. Five reports also carry a one-day-move note; that symptom does not define another cause by itself.
+
+## Triage
+
+Use the tenant's locale and booking form to decide which issue to file. Keep the parser and hint causes in separate tickets, even when the report subjects match. The linked issues include the number of reports covered.
+
+<RenderStamp {signature} />
