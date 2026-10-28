@@ -13,8 +13,8 @@ signature: MEGA.dev harness · S01E03
 
   const signature = 'MEGA.dev harness · S01E03';
   const issueUrls = {
-    parser: 'https://github.com/OWNER/REPO/issues/ISSUE_NUMBER',
-    hint: 'https://github.com/OWNER/REPO/issues/ISSUE_NUMBER',
+    parser: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/1',
+    hint: 'https://github.com/maciaszek/mega-s01e03-what-it-shows/issues/2',
   };
 </script>
 
